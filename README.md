@@ -17,11 +17,11 @@ This repository accompanies the paper:
 
 With the improving accuracy of ESA's precise orbit data, this work systematically evaluates whether ESD remains an indispensable step for S-1 TOPS coregistration. We conduct experiments across **three scales** to compare coregistration errors **with and without ESD**:
 
-| Scale | Description |
-|-------|-------------|
-| **Full SAR Scene Scale** | Coregistration error assessment across the full study-area extent |
-| **Burst & Block Scales** | Coregistration error assessment on a per-overlap (between adjacent bursts) and per-block basis |
-| **Time-Series Scale** | Coregistration error assessment for time-series InSAR applications |
+| Experimental Scale       | Main Objective                                                                                                | Paper Section | Corresponding Code |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------- | ------------- | ------------------ |
+| **Full SAR Scene Scale** | Evaluate residual azimuth shifts after geometrical coregistration using precise orbit products                | Section IV-A  | 01InSAR            |
+| **Burst & Block Scales** | Assess the spatial consistency and reliability of ESD-derived azimuth shifts across burst overlaps and blocks | Section IV-B  | 02Burst            |
+| **Time-Series Scale**    | Compare MT-InSAR deformation results with and without ESD using StaMPS                                        | Section IV-C  | 03MT-InSAR         |
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
@@ -43,3 +43,24 @@ Anyone with access to Sentinel-1 data (freely available from ESA) can reproduce 
 
 
 ## 📁 Repository Structure
+
+```text
+.
+├── 01InSAR/
+│   ├── README.txt
+│   ├── snap_insar.py
+│   ├── snap_esd0.xml
+│   └── snap_esd1.xml
+│
+├── 02Burst/
+│   ├── README.txt
+│   ├── snap_burst.py
+│   └── snap_burst.xml
+│
+└── 03MT-InSAR/
+    ├── README.txt
+    ├── snap_stamps.py
+    └── snap_stamps.xml
+```
+
+Each directory contains a `README.txt` file with processing details and configuration instructions.
